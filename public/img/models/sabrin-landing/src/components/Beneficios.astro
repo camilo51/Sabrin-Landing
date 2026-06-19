@@ -1,0 +1,54 @@
+---
+const beneficios = [
+  {
+    titulo: "Control de términos legales",
+    detalle:
+      "SABRIN cuenta los días hábiles de cada Derecho de Petición y te avisa antes de que venza, no después.",
+  },
+  {
+    titulo: "Redacción con IA jurídica",
+    detalle:
+      "Genera Derechos de Petición y resúmenes de expedientes a partir de los hechos del caso, listos para revisar y exportar.",
+  },
+  {
+    titulo: "Expediente digital único",
+    detalle:
+      "Evidencias, documentos y comunicaciones de cada caso quedan adjuntos al mismo expediente, con historial completo.",
+  },
+  {
+    titulo: "Exportación formal",
+    detalle:
+      "Descarga cualquier documento en PDF o Word, con el formato listo para radicar o presentar ante terceros.",
+  },
+  {
+    titulo: "Agenda y alertas",
+    detalle:
+      "Audiencias, vencimientos y reuniones en una sola agenda jurídica, con recordatorios automáticos.",
+  },
+  {
+    titulo: "Honorarios bajo control",
+    detalle:
+      "Registra abonos, saldos pendientes y obligaciones financieras por cliente y por caso.",
+  },
+];
+---
+
+<section id="producto" class="border-b border-line/70">
+  <div class="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
+    <div class="max-w-2xl">
+      <p class="eyebrow text-xs font-medium text-seal">Lo que incluye</p>
+      <h2 class="mt-4 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+        Todo lo que hoy haces a mano, ahora con trazabilidad.
+      </h2>
+    </div>
+
+    <div class="mt-14 grid gap-px overflow-hidden border border-line/70 bg-line/70 sm:grid-cols-2 lg:grid-cols-3">
+      {beneficios.map((b) => (
+        <div class="group bg-paper p-7 transition-colors hover:bg-paper-deep/60">
+          <h3 class="font-display text-lg font-semibold text-ink">{b.titulo}</h3>
+          <p class="mt-2.5 font-body text-sm leading-relaxed text-ink-soft">{b.detalle}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

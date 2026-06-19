@@ -1,0 +1,32 @@
+---
+const metricas = [
+  { numero: "15 días", etiqueta: "hábiles que SABRIN vigila en cada Derecho de Petición" },
+  { numero: "0", etiqueta: "expedientes duplicados entre Excel, Word y correo" },
+  { numero: "< 5 min", etiqueta: "para generar un borrador de Derecho de Petición con IA" },
+];
+---
+
+<section id="confianza" class="border-b border-line/70 bg-navy text-paper">
+  <div class="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
+    <div class="max-w-2xl">
+      <p class="eyebrow text-xs font-medium text-gold">Construido con abogados, no para ellos</p>
+      <h2 class="mt-4 font-display text-3xl font-semibold tracking-tight text-paper sm:text-4xl">
+        SABRIN nace de un problema real: el seguimiento manual de términos legales.
+      </h2>
+      <p class="mt-5 font-body text-[15px] leading-relaxed text-paper/75">
+        Estamos en fase de validación con abogados independientes y pequeñas firmas en Colombia.
+        Si gestionas Derechos de Petición todas las semanas, tu flujo de trabajo es exactamente
+        el que estamos diseñando.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-10 border-t border-paper/15 pt-12 sm:grid-cols-3">
+      {metricas.map((m) => (
+        <div>
+          <p class="font-display text-4xl font-semibold text-gold">{m.numero}</p>
+          <p class="mt-2 font-body text-sm leading-relaxed text-paper/70">{m.etiqueta}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

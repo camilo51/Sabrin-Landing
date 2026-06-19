@@ -1,0 +1,118 @@
+---
+const formatoCOP = new Intl.NumberFormat("es-CO");
+
+const planes = [
+  {
+    nombre: "Esencial",
+    precio: 79000,
+    periodo: "/ mes",
+    descripcion: "Para el abogado que lleva sus casos solo y quiere dejar el Excel atrás.",
+    incluye: [
+      "Hasta 25 expedientes activos",
+      "1 usuario",
+      "Control automático de términos legales",
+      "10 documentos con IA al mes",
+      "Agenda jurídica y alertas",
+      "Exportación a PDF y Word",
+    ],
+    destacado: false,
+  },
+  {
+    nombre: "Profesional",
+    precio: 219000,
+    periodo: "/ mes",
+    descripcion: "Para firmas pequeñas que ya comparten casos entre dos o tres abogados.",
+    incluye: [
+      "Hasta 150 expedientes activos",
+      "Hasta 5 usuarios",
+      "Todo lo de Esencial",
+      "60 documentos con IA al mes",
+      "Honorarios y reportes por abogado",
+      "Roles básicos (administrador / abogado)",
+    ],
+    destacado: false,
+  },
+  {
+    nombre: "Firma+",
+    precio: 590000,
+    periodo: "/ mes",
+    descripcion: "Para firmas que manejan alto volumen de expedientes y necesitan control fino de quién ve qué.",
+    incluye: [
+      "Expedientes y clientes ilimitados",
+      "Usuarios ilimitados",
+      "Todo lo de Profesional",
+      "Documentos con IA ilimitados",
+      "Roles y permisos granulares (RBAC completo)",
+      "Auditoría y trazabilidad por usuario",
+      "Onboarding dedicado y soporte prioritario",
+    ],
+    destacado: true,
+  },
+];
+---
+
+<section id="precios" class="border-b border-line/70">
+  <div class="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
+    <div class="max-w-2xl">
+      <p class="eyebrow text-xs font-medium text-seal">Planes</p>
+      <h2 class="mt-4 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+        Un plan para cada tamaño de práctica jurídica.
+      </h2>
+      <p class="mt-4 font-body text-[15px] leading-relaxed text-ink-soft">
+        Precios en pesos colombianos, facturación mensual. Sin permanencia mínima.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-6 lg:grid-cols-3">
+      {planes.map((plan) => (
+        <div
+          class:list={[
+            "folio flex flex-col p-8",
+            plan.destacado && "ring-1 ring-seal/40 lg:-translate-y-3",
+          ]}
+        >
+          {plan.destacado && (
+            <span class="eyebrow mb-4 inline-block w-fit bg-seal px-2.5 py-1 text-[11px] font-semibold text-paper">
+              Recomendado para firmas
+            </span>
+          )}
+          <h3 class="font-display text-2xl font-semibold text-ink">{plan.nombre}</h3>
+          <p class="mt-3 font-body text-sm leading-relaxed text-ink-soft">{plan.descripcion}</p>
+
+          <div class="mt-6 flex items-baseline gap-1.5">
+            <span class="font-display text-3xl font-semibold text-ink">
+              ${formatoCOP.format(plan.precio)}
+            </span>
+            <span class="font-body text-sm text-ink-soft">COP {plan.periodo}</span>
+          </div>
+
+          <ul class="mt-7 flex-1 space-y-3 border-t border-line pt-6">
+            {plan.incluye.map((item) => (
+              <li class="flex items-start gap-2.5 font-body text-sm text-ink-soft">
+                <span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-seal"></span>
+                {item}
+              </li>
+            ))}
+          </ul>
+
+          
+          <a href="#demo"
+            class:list={[
+              "mt-8 inline-flex items-center justify-center px-6 py-3 font-body text-sm font-semibold transition-colors",
+              plan.destacado
+                ? "bg-ink text-paper hover:bg-seal"
+                : "border border-ink text-ink hover:bg-ink hover:text-paper",
+            ]}
+          >
+            {plan.destacado ? "Hablar con ventas" : "Solicitar demostración"}
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <p class="mt-10 text-center font-body text-sm text-ink-soft">
+      ¿Más de 500 expedientes activos o necesitas integraciones a medida?
+      <a href="#demo" class="underline-grow font-medium text-ink hover:text-seal">Hablemos de un plan empresarial.</a>
+    </p>
+  </div>
+</section>

@@ -1,0 +1,92 @@
+---
+---
+
+<section id="demo" class="paper-texture border-b border-line/70 bg-paper-deep/40">
+  <div class="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2 lg:items-start lg:px-10 lg:py-24">
+    <div>
+      <p class="eyebrow text-xs font-medium text-seal">Solicita una demostración</p>
+      <h2 class="mt-4 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+        Te mostramos SABRIN con un caso real de tu práctica.
+      </h2>
+      <p class="mt-5 max-w-md font-body text-[15px] leading-relaxed text-ink-soft">
+        Una sesión de 20 minutos por videollamada. Te enseñamos cómo cargar un Derecho
+        de Petición real, generar el documento con IA y dejar el término en seguimiento
+        automático.
+      </p>
+
+      <dl class="mt-10 space-y-5 border-t border-line pt-7">
+        <div class="flex gap-4">
+          <dt class="eyebrow w-20 shrink-0 text-xs text-ink-soft">Correo</dt>
+          <dd class="font-body text-sm text-ink">contacto@sabrin.app</dd>
+        </div>
+        <div class="flex gap-4">
+          <dt class="eyebrow w-20 shrink-0 text-xs text-ink-soft">Respuesta</dt>
+          <dd class="font-body text-sm text-ink">Antes de 1 día hábil</dd>
+        </div>
+      </dl>
+    </div>
+
+    <form class="folio space-y-5 p-8">
+      <div>
+        <label for="nombre" class="font-body text-sm font-medium text-ink">Nombre completo</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          required
+          placeholder="Ej. Laura Gómez Restrepo"
+          class="mt-2 w-full border border-line bg-paper px-4 py-2.5 font-body text-sm text-ink placeholder:text-ink-soft/50 focus:border-seal focus:outline-none"
+        />
+      </div>
+
+      <div>
+        <label for="correo" class="font-body text-sm font-medium text-ink">Correo electrónico</label>
+        <input
+          type="email"
+          id="correo"
+          name="correo"
+          required
+          placeholder="laura@tufirma.com"
+          class="mt-2 w-full border border-line bg-paper px-4 py-2.5 font-body text-sm text-ink placeholder:text-ink-soft/50 focus:border-seal focus:outline-none"
+        />
+      </div>
+
+      <div>
+        <label for="telefono" class="font-body text-sm font-medium text-ink">
+          Teléfono <span class="text-ink-soft/60">(opcional)</span>
+        </label>
+        <input
+          type="tel"
+          id="telefono"
+          name="telefono"
+          placeholder="300 000 0000"
+          class="mt-2 w-full border border-line bg-paper px-4 py-2.5 font-body text-sm text-ink placeholder:text-ink-soft/50 focus:border-seal focus:outline-none"
+        />
+      </div>
+
+      <div>
+        <label for="perfil" class="font-body text-sm font-medium text-ink">¿Cómo ejerces hoy?</label>
+        <select
+          id="perfil"
+          name="perfil"
+          class="mt-2 w-full border border-line bg-paper px-4 py-2.5 font-body text-sm text-ink focus:border-seal focus:outline-none"
+        >
+          <option>Abogado independiente</option>
+          <option>Pequeña firma (2 a 10 abogados)</option>
+          <option>Otro</option>
+        </select>
+      </div>
+
+      <button
+        type="submit"
+        class="w-full bg-ink px-6 py-3.5 font-body text-sm font-semibold text-paper transition-colors hover:bg-seal"
+      >
+        Agendar mi demostración
+      </button>
+
+      <p class="text-center font-body text-xs text-ink-soft">
+        Tus datos solo se usan para coordinar la demostración. Sin spam.
+      </p>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  /* Paleta — papel jurídico + tinta noche + sello terracota */
+  --color-paper: #F6F2E9;
+  --color-paper-deep: #EDE6D6;
+  --color-ink: #1B2430;
+  --color-ink-soft: #344155;
+  --color-navy: #20324A;
+  --color-seal: #B5532C;
+  --color-seal-deep: #8C3F20;
+  --color-gold: #A9863C;
+  --color-line: #D8CFB8;
+
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --shadow-stamp: 0 1px 0 rgba(27,36,48,0.06), 0 8px 24px -12px rgba(27,36,48,0.35);
+}
+
+@layer base {
+  html {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+
+  ::selection {
+    background-color: var(--color-seal);
+    color: var(--color-paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-seal);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Textura de papel sutil: ruido fino + veta */
+  .paper-texture {
+    background-image:
+      radial-gradient(rgba(27,36,48,0.035) 0.6px, transparent 0.6px);
+    background-size: 4px 4px;
+  }
+
+  /* Folio: la ficha de "expediente" que es el elemento firma del sitio */
+  .folio {
+    position: relative;
+    border: 1px solid var(--color-line);
+    background: var(--color-paper);
+    box-shadow: var(--shadow-stamp);
+  }
+
+  .folio::before {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    border: 1px solid rgba(27,36,48,0.08);
+    pointer-events: none;
+  }
+
+  /* Sello circular tipo "vencimiento legal" */
+  .stamp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid currentColor;
+    border-radius: 9999px;
+    transform: rotate(-6deg);
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .underline-grow {
+    background-image: linear-gradient(var(--color-seal), var(--color-seal));
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size 0.3s ease;
+  }
+  .underline-grow:hover {
+    background-size: 100% 2px;
+  }
+}

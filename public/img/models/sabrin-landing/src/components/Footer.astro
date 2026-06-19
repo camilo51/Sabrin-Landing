@@ -1,0 +1,90 @@
+---
+const año = new Date().getFullYear();
+
+const producto = [
+  { label: "Qué resolvemos", href: "#propuesta" },
+  { label: "Producto", href: "#producto" },
+  { label: "Planes", href: "#precios" },
+  { label: "Preguntas frecuentes", href: "#faq" },
+];
+
+const legal = [
+  { label: "Política de privacidad", href: "#" },
+  { label: "Términos y condiciones", href: "#" },
+  { label: "Tratamiento de datos", href: "#" },
+];
+
+const redes = [
+  { label: "LinkedIn", href: "#" },
+  { label: "Instagram", href: "#" },
+];
+---
+
+<footer id="contacto" class="bg-ink text-paper">
+  <div class="mx-auto max-w-7xl px-6 py-16 lg:px-10">
+    <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="sm:col-span-2 lg:col-span-1">
+        <div class="flex items-center gap-2.5">
+          <span class="stamp h-9 w-9 text-gold">
+            <span class="font-display text-base">S</span>
+          </span>
+          <span class="font-display text-xl font-semibold text-paper">SABRIN</span>
+        </div>
+        <p class="mt-4 max-w-xs font-body text-sm leading-relaxed text-paper/60">
+          Gestión jurídica centralizada para abogados independientes y pequeñas firmas
+          en Colombia.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="eyebrow text-xs font-medium text-paper/50">Producto</h3>
+        <ul class="mt-4 space-y-3">
+          {producto.map((item) => (
+            <li>
+              <a href={item.href} class="font-body text-sm text-paper/75 hover:text-paper">
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="eyebrow text-xs font-medium text-paper/50">Legal</h3>
+        <ul class="mt-4 space-y-3">
+          {legal.map((item) => (
+            <li>
+              <a href={item.href} class="font-body text-sm text-paper/75 hover:text-paper">
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="eyebrow text-xs font-medium text-paper/50">Contacto</h3>
+        <ul class="mt-4 space-y-3 font-body text-sm text-paper/75">
+          <li>contacto@sabrin.app</li>
+          <li>Medellín, Colombia</li>
+        </ul>
+        <div class="mt-5 flex gap-4">
+          {redes.map((red) => (
+            <a href={red.href} class="font-body text-sm text-paper/60 underline-grow hover:text-paper">
+              {red.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-14 flex flex-col gap-3 border-t border-paper/15 pt-7 sm:flex-row sm:items-center sm:justify-between">
+      <p class="font-body text-xs text-paper/50">
+        © {año} SABRIN. Todos los derechos reservados.
+      </p>
+      <p class="font-mono text-[11px] text-paper/40">
+        SABRIN no constituye asesoría jurídica
+      </p>
+    </div>
+  </div>
+</footer>

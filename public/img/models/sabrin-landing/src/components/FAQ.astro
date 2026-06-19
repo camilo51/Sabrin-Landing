@@ -1,0 +1,59 @@
+---
+const preguntas = [
+  {
+    pregunta: "¿Cuánto cuesta SABRIN?",
+    respuesta:
+      "Tenemos tres planes mensuales sin permanencia mínima: Esencial para el abogado independiente, Profesional para firmas pequeñas y Firma+ para quienes manejan alto volumen de expedientes y necesitan roles granulares. Si tu firma supera los 500 expedientes activos, armamos un plan empresarial a la medida.",
+  },
+  {
+    pregunta: "¿Cómo controla SABRIN los términos legales?",
+    respuesta:
+      "Cada expediente registra la fecha de radicación y el tipo de proceso. SABRIN calcula los días hábiles restantes y te avisa con anticipación antes de que venza el término, directamente en tu agenda jurídica.",
+  },
+  {
+    pregunta: "¿La IA reemplaza al abogado al redactar un documento?",
+    respuesta:
+      "No. SABRIN genera un borrador a partir de los hechos del caso para que tú lo revises, ajustes y firmes. La decisión jurídica y la revisión final siempre quedan en tus manos.",
+  },
+  {
+    pregunta: "¿Mis expedientes y documentos están seguros?",
+    respuesta:
+      "Sí. La plataforma usa autenticación con roles, conexión cifrada y controles de acceso según el rol del usuario (administrador o abogado), para que cada quien vea únicamente lo que le corresponde.",
+  },
+  {
+    pregunta: "¿Puedo exportar mis documentos?",
+    respuesta:
+      "Sí, cualquier documento generado en SABRIN se puede exportar en PDF o Word, listo para radicar o presentar formalmente.",
+  },
+];
+---
+
+<section id="faq" class="border-b border-line/70">
+  <div class="mx-auto max-w-4xl px-6 py-20 lg:px-10 lg:py-24">
+    <div class="max-w-2xl">
+      <p class="eyebrow text-xs font-medium text-seal">Antes de empezar</p>
+      <h2 class="mt-4 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+        Preguntas frecuentes
+      </h2>
+    </div>
+
+    <div class="mt-12 divide-y divide-line border-t border-line">
+      {preguntas.map((item) => (
+        <details class="group py-5">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-6 font-display text-lg font-medium text-ink marker:content-none">
+            {item.pregunta}
+            <span
+              class="font-mono text-xl text-seal transition-transform duration-200 group-open:rotate-45"
+              aria-hidden="true"
+            >
+              +
+            </span>
+          </summary>
+          <p class="mt-3 max-w-2xl font-body text-[15px] leading-relaxed text-ink-soft">
+            {item.respuesta}
+          </p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+---
+const pilares = [
+  {
+    pregunta: "¿Qué hace SABRIN?",
+    respuesta:
+      "Une clientes, expedientes, documentos, términos y honorarios en una sola plataforma web, con un asistente de IA que redacta Derechos de Petición y resume expedientes completos.",
+  },
+  {
+    pregunta: "¿Qué problema resuelve?",
+    respuesta:
+      "El expediente disperso entre Excel, Word, carpetas físicas y correos: información perdida, términos vencidos sin aviso y horas de redacción que se podrían evitar.",
+  },
+  {
+    pregunta: "¿Qué te diferencia?",
+    respuesta:
+      "Control de términos legales con alertas automáticas y generación documental con IA entrenada para el lenguaje jurídico colombiano, no un editor de texto genérico.",
+  },
+];
+---
+
+<section id="propuesta" class="border-b border-line/70 bg-paper-deep/40">
+  <div class="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
+    <div class="max-w-2xl">
+      <p class="eyebrow text-xs font-medium text-seal">Por qué existe SABRIN</p>
+      <h2 class="mt-4 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+        El expediente jurídico no debería vivir en cinco lugares distintos.
+      </h2>
+    </div>
+
+    <div class="mt-14 grid gap-x-10 gap-y-12 border-t border-line/70 pt-12 lg:grid-cols-3">
+      {pilares.map((p) => (
+        <div class="border-l-2 border-seal/40 pl-6">
+          <h3 class="font-display text-xl font-medium text-ink">{p.pregunta}</h3>
+          <p class="mt-3 font-body text-[15px] leading-relaxed text-ink-soft">{p.respuesta}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
