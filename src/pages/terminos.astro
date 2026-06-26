@@ -1,0 +1,95 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const secciones = [
+    {
+        titulo: "1. Objeto",
+        contenido: `SABRIN es una plataforma SaaS de gestión jurídica destinada a abogados independientes y pequeñas firmas en Colombia. Estos términos regulan el acceso y uso del servicio disponible en sabrin.app. Al registrarse, el usuario acepta las condiciones aquí descritas en su totalidad.`,
+    },
+    {
+        titulo: "2. Usuarios autorizados",
+        contenido: `El acceso a SABRIN está restringido a profesionales del derecho debidamente habilitados y al personal administrativo que estos autoricen dentro de la plataforma. Queda prohibido el uso por parte de menores de edad o personas sin vínculo con una práctica jurídica activa.`,
+    },
+    {
+        titulo: "3. Planes y facturación",
+        contenido: `SABRIN ofrece tres planes de suscripción mensual (Esencial, Profesional y Firma+) con precios expresados en pesos colombianos (COP). La facturación se realiza de forma anticipada al inicio de cada período. No existe permanencia mínima; el usuario puede cancelar en cualquier momento y conservará el acceso hasta el fin del período ya pagado.`,
+    },
+    {
+        titulo: "4. Uso del servicio de IA",
+        contenido: `Los documentos generados mediante el asistente de inteligencia artificial de SABRIN constituyen borradores de apoyo. SABRIN no garantiza su exactitud jurídica ni su idoneidad para un caso específico. La revisión, validación y firma de cualquier documento es responsabilidad exclusiva del abogado usuario. El uso de la IA no reemplaza el criterio profesional ni la asesoría jurídica.`,
+    },
+    {
+        titulo: "5. Propiedad intelectual",
+        contenido: `La plataforma, su código, diseño, marca y documentación son propiedad de SABRIN. Los documentos, expedientes y datos ingresados por el usuario son de su exclusiva propiedad. SABRIN no reclama derechos sobre el contenido generado por el usuario dentro de la plataforma.`,
+    },
+    {
+        titulo: "6. Suspensión y cancelación",
+        contenido: `SABRIN se reserva el derecho de suspender o cancelar el acceso de un usuario que incumpla estos términos, haga uso indebido de la plataforma, o intente acceder a información de otros usuarios sin autorización. En caso de cancelación por incumplimiento, no habrá lugar a reembolso del período en curso.`,
+    },
+    {
+        titulo: "7. Limitación de responsabilidad",
+        contenido: `SABRIN no será responsable por pérdidas derivadas del vencimiento de términos legales cuando el usuario no haya configurado correctamente las fechas del expediente, ni por decisiones jurídicas tomadas con base en documentos generados por IA sin la revisión profesional correspondiente.`,
+    },
+    {
+        titulo: "8. Modificaciones",
+        contenido: `SABRIN podrá actualizar estos términos en cualquier momento. Los cambios serán notificados al correo registrado con un mínimo de 15 días de anticipación. El uso continuado de la plataforma tras ese plazo implica la aceptación de los nuevos términos.`,
+    },
+    {
+        titulo: "9. Ley aplicable",
+        contenido: `Estos términos se rigen por las leyes de la República de Colombia. Cualquier controversia será resuelta ante los jueces competentes de la ciudad de Medellín, Antioquia.`,
+    },
+];
+---
+
+<Layout
+    title="Términos y condiciones — SABRIN"
+    description="Condiciones de uso de la plataforma SABRIN para abogados y firmas jurídicas en Colombia."
+>
+    <div class="mx-auto max-w-3xl px-6 pt-10 lg:px-10">
+        <a
+            href="/"
+            class="inline-flex items-center gap-2 font-body text-sm text-ink-soft transition-colors hover:text-seal"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path d="M19 12H5"></path><path d="M12 19l-7-7 7-7"></path>
+            </svg>
+            Volver al inicio
+        </a>
+    </div>
+    <main class="mx-auto max-w-3xl px-6 py-10 lg:px-10 lg:py-15">
+        <p class="eyebrow text-xs font-medium text-seal">Legal</p>
+        <h1
+            class="mt-4 font-display text-4xl font-semibold tracking-tight text-ink"
+        >
+            Términos y condiciones
+        </h1>
+        <p class="mt-4 font-body text-sm text-ink-soft">
+            Última actualización: junio de 2026
+        </p>
+
+        <div class="mt-14 space-y-10 border-t border-line pt-10">
+            {
+                secciones.map((s) => (
+                    <div>
+                        <h2 class="font-display text-xl font-semibold text-ink">
+                            {s.titulo}
+                        </h2>
+                        <p class="mt-3 font-body text-[15px] leading-relaxed text-ink-soft">
+                            {s.contenido}
+                        </p>
+                    </div>
+                ))
+            }
+        </div>
+    </main>
+</Layout>

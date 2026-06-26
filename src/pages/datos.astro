@@ -1,0 +1,95 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const secciones = [
+    {
+        titulo: "1. Marco normativo",
+        contenido: `El tratamiento de datos personales en SABRIN se rige por la Ley Estatutaria 1581 de 2012 de Colombia y su Decreto Reglamentario 1377 de 2013. Al registrarse en la plataforma, el usuario autoriza expresamente el tratamiento de sus datos conforme a esta política.`,
+    },
+    {
+        titulo: "2. Datos recopilados y base legal",
+        contenido: `SABRIN recopila datos de identificación del abogado usuario (nombre, correo, teléfono) con base en la ejecución del contrato de suscripción. Los datos de clientes jurídicos ingresados en la plataforma son responsabilidad del abogado como encargado del tratamiento frente a sus propios clientes, quienes deben haber otorgado su autorización previa.`,
+    },
+    {
+        titulo: "3. Finalidades autorizadas",
+        contenido: `Los datos personales serán utilizados exclusivamente para: (a) gestionar la relación contractual con el usuario suscriptor, (b) prestar las funcionalidades de la plataforma (expedientes, agenda, honorarios, generación documental con IA), (c) enviar comunicaciones operativas y alertas del servicio, y (d) cumplir obligaciones legales aplicables.`,
+    },
+    {
+        titulo: "4. Datos de menores de edad",
+        contenido: `SABRIN no está dirigida a menores de edad ni recopila datos de menores de forma directa. Si en el marco de un expediente jurídico se ingresaran datos de un menor, el abogado usuario es el responsable de contar con las autorizaciones legales correspondientes conforme al ordenamiento jurídico colombiano.`,
+    },
+    {
+        titulo: "5. Encargados del tratamiento",
+        contenido: `SABRIN puede delegar el procesamiento técnico de datos en proveedores de infraestructura (servidores en la nube) y servicios de IA. Dichos proveedores actúan como encargados del tratamiento bajo acuerdos de confidencialidad y con las garantías exigidas por la normativa colombiana y, en su caso, el Reglamento General de Protección de Datos de la Unión Europea (RGPD).`,
+    },
+    {
+        titulo: "6. Derechos ARCO",
+        contenido: `El titular de los datos tiene derecho a: Acceder a sus datos personales almacenados en SABRIN, Rectificar datos inexactos o incompletos, Cancelar o suprimir sus datos cuando ya no sean necesarios, y Oponerse al tratamiento en los casos previstos por la ley. Para ejercer cualquiera de estos derechos, el titular debe enviar una solicitud escrita a contacto@sabrin.app con su identificación y descripción de la solicitud. SABRIN responderá en un plazo máximo de 10 días hábiles.`,
+    },
+    {
+        titulo: "7. Transferencias internacionales",
+        contenido: `En caso de que datos personales sean transferidos a servidores ubicados fuera de Colombia (por ejemplo, para procesamiento de IA), SABRIN garantiza que dichas transferencias se realizan a países o entidades con niveles adecuados de protección, o bajo cláusulas contractuales que ofrezcan garantías equivalentes a las exigidas por la Ley 1581 de 2012.`,
+    },
+    {
+        titulo: "8. Tiempo de conservación",
+        contenido: `Los datos se conservarán durante la vigencia del contrato de suscripción y por un período adicional de cinco (5) años contados desde la terminación, conforme a las obligaciones legales aplicables a la conservación de información jurídica en Colombia. Transcurrido ese plazo, los datos serán eliminados de forma segura.`,
+    },
+    {
+        titulo: "9. Autoridad de control",
+        contenido: `Si considera que SABRIN ha vulnerado sus derechos en materia de protección de datos, puede presentar una queja ante la Superintendencia de Industria y Comercio (SIC) de Colombia, entidad encargada de velar por el cumplimiento de la Ley 1581 de 2012.`,
+    },
+];
+---
+
+<Layout
+    title="Tratamiento de datos — SABRIN"
+    description="Política de tratamiento de datos personales de SABRIN conforme a la Ley 1581 de 2012."
+>
+    <div class="mx-auto max-w-3xl px-6 pt-10 lg:px-10">
+        <a
+            href="/"
+            class="inline-flex items-center gap-2 font-body text-sm text-ink-soft transition-colors hover:text-seal"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path d="M19 12H5"></path><path d="M12 19l-7-7 7-7"></path>
+            </svg>
+            Volver al inicio
+        </a>
+    </div>
+    <main class="mx-auto max-w-3xl px-6 py-10 lg:px-10 lg:py-15">
+        <p class="eyebrow text-xs font-medium text-seal">Legal</p>
+        <h1
+            class="mt-4 font-display text-4xl font-semibold tracking-tight text-ink"
+        >
+            Tratamiento de datos personales
+        </h1>
+        <p class="mt-4 font-body text-sm text-ink-soft">
+            Última actualización: junio de 2026 · Ley 1581 de 2012
+        </p>
+
+        <div class="mt-14 space-y-10 border-t border-line pt-10">
+            {
+                secciones.map((s) => (
+                    <div>
+                        <h2 class="font-display text-xl font-semibold text-ink">
+                            {s.titulo}
+                        </h2>
+                        <p class="mt-3 font-body text-[15px] leading-relaxed text-ink-soft">
+                            {s.contenido}
+                        </p>
+                    </div>
+                ))
+            }
+        </div>
+    </main>
+</Layout>

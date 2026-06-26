@@ -1,0 +1,95 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const secciones = [
+    {
+        titulo: "1. Responsable del tratamiento",
+        contenido: `SABRIN es el responsable del tratamiento de los datos personales recopilados a través de la plataforma sabrin.app. Para consultas relacionadas con privacidad puede escribir a: contacto@sabrin.app.`,
+    },
+    {
+        titulo: "2. Datos que recopilamos",
+        contenido: `Recopilamos los datos que el usuario ingresa directamente: nombre completo, correo electrónico, teléfono, información de los clientes jurídicos registrados, contenido de expedientes y documentos. También recopilamos datos de uso de la plataforma (páginas visitadas, funciones utilizadas, frecuencia de acceso) con fines de mejora del servicio.`,
+    },
+    {
+        titulo: "3. Finalidad del tratamiento",
+        contenido: `Los datos se utilizan para: prestar el servicio de gestión jurídica contratado, generar documentos mediante IA a partir de la información del expediente, enviar alertas y notificaciones de términos legales, y mejorar las funcionalidades de la plataforma. No utilizamos los datos para publicidad de terceros.`,
+    },
+    {
+        titulo: "4. Confidencialidad de los datos jurídicos",
+        contenido: `Los datos de clientes y expedientes ingresados por el abogado usuario son tratados con estricta confidencialidad. SABRIN no accede al contenido de los expedientes salvo para la prestación técnica del servicio (procesamiento de IA, almacenamiento, copia de seguridad). Ningún dato de expediente es compartido con terceros sin autorización expresa del usuario.`,
+    },
+    {
+        titulo: "5. Almacenamiento y seguridad",
+        contenido: `Los datos se almacenan en servidores con cifrado en tránsito (HTTPS) y en reposo. Las contraseñas se almacenan usando hashing seguro (Argon2id). El acceso a los datos está restringido por roles y permisos (RBAC), de modo que cada usuario solo accede a la información que le corresponde.`,
+    },
+    {
+        titulo: "6. Transferencia de datos",
+        contenido: `SABRIN utiliza servicios de terceros para el procesamiento de IA (modelos de lenguaje de gran escala). Los fragmentos de texto enviados a estos servicios para generación de documentos no incluyen datos de identificación personal del cliente jurídico salvo los que el abogado ingrese explícitamente en el prompt. El usuario es responsable de anonimizar la información sensible antes de usar la función de IA.`,
+    },
+    {
+        titulo: "7. Derechos del titular",
+        contenido: `De conformidad con la Ley 1581 de 2012, el usuario tiene derecho a conocer, actualizar, rectificar y suprimir sus datos personales. Para ejercer estos derechos puede escribir a contacto@sabrin.app indicando su solicitud. SABRIN dará respuesta en un plazo máximo de 10 días hábiles.`,
+    },
+    {
+        titulo: "8. Cookies",
+        contenido: `SABRIN utiliza cookies de sesión estrictamente necesarias para mantener la autenticación del usuario. No utilizamos cookies de seguimiento publicitario ni compartimos datos de navegación con redes de publicidad.`,
+    },
+    {
+        titulo: "9. Vigencia",
+        contenido: `Esta política está vigente desde junio de 2026 y puede ser actualizada. Los cambios serán notificados al correo registrado. El uso continuado de la plataforma implica la aceptación de la versión vigente.`,
+    },
+];
+---
+
+<Layout
+    title="Política de privacidad — SABRIN"
+    description="Cómo SABRIN recopila, usa y protege los datos personales de abogados y firmas jurídicas."
+>
+    <div class="mx-auto max-w-3xl px-6 pt-10 lg:px-10">
+        <a
+            href="/"
+            class="inline-flex items-center gap-2 font-body text-sm text-ink-soft transition-colors hover:text-seal"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path d="M19 12H5"></path><path d="M12 19l-7-7 7-7"></path>
+            </svg>
+            Volver al inicio
+        </a>
+    </div>
+    <main class="mx-auto max-w-3xl px-6 py-10 lg:px-10 lg:py-15">
+        <p class="eyebrow text-xs font-medium text-seal">Legal</p>
+        <h1
+            class="mt-4 font-display text-4xl font-semibold tracking-tight text-ink"
+        >
+            Política de privacidad
+        </h1>
+        <p class="mt-4 font-body text-sm text-ink-soft">
+            Última actualización: junio de 2026
+        </p>
+
+        <div class="mt-14 space-y-10 border-t border-line pt-10">
+            {
+                secciones.map((s) => (
+                    <div>
+                        <h2 class="font-display text-xl font-semibold text-ink">
+                            {s.titulo}
+                        </h2>
+                        <p class="mt-3 font-body text-[15px] leading-relaxed text-ink-soft">
+                            {s.contenido}
+                        </p>
+                    </div>
+                ))
+            }
+        </div>
+    </main>
+</Layout>

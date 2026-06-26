@@ -1,41 +1,41 @@
 ---
 const beneficios = [
   {
-    titulo: "Control de términos legales",
-    detalle:
-      "SABRIN cuenta los días hábiles de cada Derecho de Petición y te avisa antes de que venza, no después.",
+    icono: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>`,
+    titulo: "Términos legales",
+    detalle: "Días hábiles en seguimiento automático, con alerta antes del vencimiento.",
   },
   {
-    titulo: "Redacción con IA jurídica",
-    detalle:
-      "Genera Derechos de Petición y resúmenes de expedientes a partir de los hechos del caso, listos para revisar y exportar.",
+    icono: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>`,
+    titulo: "Redacción con IA",
+    detalle: "Borradores de Derechos de Petición listos para revisar y exportar.",
   },
   {
-    titulo: "Expediente digital único",
-    detalle:
-      "Evidencias, documentos y comunicaciones de cada caso quedan adjuntos al mismo expediente, con historial completo.",
+    icono: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>`,
+    titulo: "Expediente digital",
+    detalle: "Evidencias, documentos y comunicaciones del caso en un solo expediente.",
   },
   {
+    icono: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`,
     titulo: "Exportación formal",
-    detalle:
-      "Descarga cualquier documento en PDF o Word, con el formato listo para radicar o presentar ante terceros.",
+    detalle: "PDF o Word listo para radicar, en un clic.",
   },
   {
-    titulo: "Agenda y alertas",
-    detalle:
-      "Audiencias, vencimientos y reuniones en una sola agenda jurídica, con recordatorios automáticos.",
+    icono: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
+    titulo: "Agenda jurídica",
+    detalle: "Audiencias y vencimientos en un solo calendario, con recordatorios.",
   },
   {
-    titulo: "Honorarios bajo control",
-    detalle:
-      "Registra abonos, saldos pendientes y obligaciones financieras por cliente y por caso.",
+    icono: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
+    titulo: "Honorarios",
+    detalle: "Abonos, saldos y obligaciones financieras por cliente y por caso.",
   },
 ];
 ---
 
 <section id="producto" class="border-b border-line/70">
   <div class="mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
-    <div class="max-w-2xl">
+    <div class="max-w-xl">
       <p class="eyebrow text-xs font-medium text-seal">Lo que incluye</p>
       <h2 class="mt-4 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
         Todo lo que hoy haces a mano, ahora con trazabilidad.
@@ -44,9 +44,12 @@ const beneficios = [
 
     <div class="mt-14 grid gap-px overflow-hidden border border-line/70 bg-line/70 sm:grid-cols-2 lg:grid-cols-3">
       {beneficios.map((b) => (
-        <div class="group bg-paper p-7 transition-colors hover:bg-paper-deep/60">
-          <h3 class="font-display text-lg font-semibold text-ink">{b.titulo}</h3>
-          <p class="mt-2.5 font-body text-sm leading-relaxed text-ink-soft">{b.detalle}</p>
+        <div class="group flex gap-4 bg-paper p-7 transition-colors hover:bg-paper-deep/60">
+          <span class="mt-0.5 shrink-0 text-seal" set:html={b.icono} />
+          <div>
+            <h3 class="font-display text-base font-semibold text-ink">{b.titulo}</h3>
+            <p class="mt-1.5 font-body text-sm leading-relaxed text-ink-soft">{b.detalle}</p>
+          </div>
         </div>
       ))}
     </div>
